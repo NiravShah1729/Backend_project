@@ -1,0 +1,11 @@
+{
+  "name": "vidtube_2",
+  "version": "1.0.0",
+  "description": "Project in backend",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nirav shah",
+  "license": "ISC"
+}
