@@ -23,7 +23,10 @@ const userSchema = new Schema(
     avatar: { type: String, default: "" },
     coverImage: { type: String, default: "" },
     watchHistory: [{ type: Schema.Types.ObjectId, ref: "Video" }],
-    password: { type: String, required: [true, "Password is required"] },
+    password: {
+      type: String,
+      required: [true, "Password is required"]
+    },
     refreshToken: { type: String, default: "" },
   },
   { timestamps: true }
@@ -54,6 +57,7 @@ userSchema.methods.generateAccessToken = function () {
     { expiresIn: process.env.ACCESS_TOKEN_EXPIRY }
   );
 };
+
 userSchema.methods.generateRefreshToken = function () {
   return jwt.sign(
     {
